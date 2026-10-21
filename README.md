@@ -41,7 +41,8 @@
 
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
-
+r/tennis.
+The classifier will sort the posts into 3 labels "reaction", "analysis" and "hot_take".
 
 
 ---
@@ -55,33 +56,52 @@
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
 ### `label_one`
-
+analysis
 **Definition:**
 
+A post which makes an argument or explanation using specific, checkable evidence such as statistics, comparisons, or examples. An opinion supported by evidence.
 **Example 1:**
->
+
+She saved 8 of 10 break points and won 72% of points at the net. That combination made the close scoreline misleading because she controlled the important points.
 
 **Example 2:**
 >
+Mertens serving 80% first serves and winning 77 points tells you everything, Iga never got a foothold in that one.
 
 ### `label_two`
+hot_take
+**Definition:**
+A post is a hot_take when it makes a confident, broad, or provocative opinion without providing meaningful supporting evidence.
+**Example 1:**
 
+Clay-court tennis is the only surface that rewards actual skill
+**Example 2:**
+>
+Such a ridiculous discussion. He's doing just fine against the top 10, besides Sincaraz which is pretty understandable.
+
+### `label_three`
+reaction
 **Definition:**
 
+A post is a reaction when it expresses an immediate response to something that just happened. It usually communicates an emotion, personal experience, or quick impression rather than developing an argument.
 **Example 1:**
 >
+She played out of this world...Her best match of her whole career...
 
 **Example 2:**
 >
+2 hours 54 minutes match and she's going to play a doubles match soon.
+
 
 ### The hardest boundary
 
 **Which two labels:**
-
+hot_take vs. reaction
+analysis vs. hot_take
 **The decision rule I used every time:**
 <!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
      if the tone is heated." -->
-
+If the post mainly expresses an immediate feeling, it is a reaction. If it supports a claim with checkable evidence,it is analysis. Otherwise, if it makes a confident unsupported opinion,it is hot_take.
 
 
 ---
@@ -92,17 +112,18 @@
      cases. -->
 
 **Where the posts came from:**
-
+r/tennis
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+     Say so plainly — the disclosure is required, not penalised. -->
+Cold first, followed by pre-labeled with AI and then checked each one.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| analysis | 67 | 33.3% |
+| hot_take | 67 | 33.3% |
+| reaction | 66 | 33.3% |
 | **Total** |  | 100% |
 
 **Three hard cases**
@@ -112,25 +133,30 @@ Say so plainly — the disclosure is required, not penalised. -->
 
 **1.**
 > *The post:*
->
+The besties be falling like dominoes in China. First Alex and now Zeynep.
 > *Could have been:*
->
+hot_take
 > *I chose, because:*
+reaction
+Although with emotional wording, it is an immediate response to recent events.
 
 **2.**
 > *The post:*
->
+There was a very long stretch in the first set where Bencic was barely winning points, which was wild to see.
 > *Could have been:*
->
+analysis
 > *I chose, because:*
+reaction
+The statement of "which was wild to see" made it reasonable for a post to be a reaction. It did not explain why the stretch mattered, so reaction is more reasonable.
 
 **3.**
 > *The post:*
->
+The funny thing is he will be missing out more money because of skipping 6 kings, than the money he would get from the bonus pool.
 > *Could have been:*
->
+analysis
 > *I chose, because:*
-
+hot_take
+This post is more of expressing the opinion with emotions rather than analyzing the fact. 
 ---
 
 ## The Training Run
