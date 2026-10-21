@@ -55,9 +55,13 @@ whether you hit them:
 
 <!-- Your criterion. It must name a number. -->
 
+The classifier must reach an overall accuracy of at least 0.65 on the held-out test set across all three random seeds.
+
 
 
 **Why this target:**
+
+There are three labels, so a roughly even random guess would be about 0.33 accuracy. A 0.65 target requires the classifier to identify the writing purpose substantially better than chance while allowing for ambiguity between `reaction` and `hot_take`.
 
 
 
@@ -67,9 +71,13 @@ whether you hit them:
 
 <!-- Your criterion. -->
 
+The held-out test-set F1 score must be at least 0.60 for each label: `analysis`, `reaction`, and `hot_take`, across all three random seeds.
+
 
 
 **Why this target:**
+
+The labels have nearly equal counts, so the model should not be able to meet the project goal by ignoring one class. The lower per-label threshold reflects the difficulty of separating short emotional reactions from confident unsupported opinions.
 
 
 
@@ -79,9 +87,13 @@ whether you hit them:
 
 <!-- Your criterion. -->
 
+The predicted test-set label distribution must keep every label between 20% and 46% of predictions for every random seed.
+
 
 
 **Why this target:**
+
+The training data is balanced at 67 `analysis`, 67 `reaction`, and 66 `hot_take` posts. A model that predicts one label for almost everything would have poor practical value even if its overall accuracy looked acceptable, so this range checks for severe collapse into one class.
 
 
 
@@ -91,9 +103,13 @@ whether you hit them:
 
 <!-- Your criterion. -->
 
+On a second blind labeling of 30 randomly selected posts, the model must agree with my final labels on at least 21 posts, or 70% agreement.
+
 
 
 **Why this target:**
+
+The hardest boundary in this taxonomy is `reaction` versus `hot_take`, because both can use strong emotional language. Reaching 70% agreement on a fresh sample would show that the decision rules are specific enough to apply consistently rather than only fitting the original examples.
 
 
 
@@ -103,9 +119,13 @@ whether you hit them:
 
 <!-- Your criterion. -->
 
+Among predictions with confidence of at least 0.80, at least 75% must be correct on the held-out test set.
+
 
 
 **Why this target:**
+
+The classifier will be more useful if its strongest predictions are usually trustworthy. A 0.80 confidence threshold leaves room for a small test set and for naturally ambiguous tennis posts, while 75% accuracy still requires confidence to carry meaningful information.
 
 
 

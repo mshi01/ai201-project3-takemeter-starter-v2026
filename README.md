@@ -189,14 +189,27 @@ of next unit's variance. -->
 **Moment 1**
 
 - *What I asked for:*
+
+
+
 - *What came back:*
+
+
 - *What I changed:*
+
 
 **Moment 2**
 
 - *What I asked for:*
+I asked it to suggest another criterion to use to gauge the model performance and accuracy.
+
 - *What came back:*
+
+It suggested that on a second blind labeling of 30 randomly selected posts, the model must agree with my final labels on at least 21 posts, or 70% agreement.
+
 - *What I changed:*
+
+I replaced this criterion because it required a second blind labeling of randomly selected posts, which would have functioned as another test set. I chose a different criterion to avoid duplicating the test-set evaluation.
 
 **Pre-labelling disclosure:**
 
