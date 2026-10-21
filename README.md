@@ -60,6 +60,7 @@ analysis
 **Definition:**
 
 A post which makes an argument or explanation using specific, checkable evidence such as statistics, comparisons, or examples. An opinion supported by evidence.
+
 **Example 1:**
 
 She saved 8 of 10 break points and won 72% of points at the net. That combination made the close scoreline misleading because she controlled the important points.
@@ -70,20 +71,26 @@ Mertens serving 80% first serves and winning 77 points tells you everything, Iga
 
 ### `label_two`
 hot_take
+
 **Definition:**
+
 A post is a hot_take when it makes a confident, broad, or provocative opinion without providing meaningful supporting evidence.
+
 **Example 1:**
 
 Clay-court tennis is the only surface that rewards actual skill
+
 **Example 2:**
 >
 Such a ridiculous discussion. He's doing just fine against the top 10, besides Sincaraz which is pretty understandable.
 
 ### `label_three`
 reaction
+
 **Definition:**
 
 A post is a reaction when it expresses an immediate response to something that just happened. It usually communicates an emotion, personal experience, or quick impression rather than developing an argument.
+
 **Example 1:**
 >
 She played out of this world...Her best match of her whole career...
@@ -96,8 +103,10 @@ She played out of this world...Her best match of her whole career...
 ### The hardest boundary
 
 **Which two labels:**
+
 hot_take vs. reaction
 analysis vs. hot_take
+
 **The decision rule I used every time:**
 <!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
      if the tone is heated." -->
@@ -124,7 +133,7 @@ Cold first, followed by pre-labeled with AI and then checked each one.
 | analysis | 67 | 33.3% |
 | hot_take | 67 | 33.3% |
 | reaction | 66 | 33.3% |
-| **Total** |  | 100% |
+| **Total** | 200 | 100% |
 
 **Three hard cases**
 
@@ -137,6 +146,7 @@ The besties be falling like dominoes in China. First Alex and now Zeynep.
 > *Could have been:*
 hot_take
 > *I chose, because:*
+
 reaction
 Although with emotional wording, it is an immediate response to recent events.
 
@@ -146,6 +156,7 @@ There was a very long stretch in the first set where Bencic was barely winning p
 > *Could have been:*
 analysis
 > *I chose, because:*
+
 reaction
 The statement of "which was wild to see" made it reasonable for a post to be a reaction. It did not explain why the stretch mattered, so reaction is more reasonable.
 
@@ -155,6 +166,7 @@ The funny thing is he will be missing out more money because of skipping 6 kings
 > *Could have been:*
 analysis
 > *I chose, because:*
+
 hot_take
 This post is more of expressing the opinion with emotions rather than analyzing the fact. 
 ---
@@ -164,15 +176,15 @@ This post is more of expressing the opinion with emotions rather than analyzing 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
 **Base model:**
-
+"distilbert-base-uncased"
 **Settings:** <!-- epochs, learning rate, batch size, seed -->
-
+seed 42, 3 epochs, lr 2e-05, batch 16
 **Anything I changed from the defaults, and why:**
-
+N/A
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
-
+     split. If a label had fewer than about 8 in test, say so — it explains a lot
+     of next unit's variance. -->
+70/15/15 (train/val/test)
 
 
 ---
@@ -190,13 +202,15 @@ of next unit's variance. -->
 
 - *What I asked for:*
 
-
+I asked what types of labels could be difficult to label?
 
 - *What came back:*
 
+It suggested that analysis and hot_take could be difficult to label as both might be expressing an opinion. 
 
 - *What I changed:*
 
+I think distinguishing analysis from hot_take is relatively easy because analysis is supported by evidence, while a hot take is not. However, distinguishing hot_take from reaction can be more difficult because both may use strong or emotional language. A hot take expresses a confident opinion, while a reaction expresses an immediate response to a recent event. 
 
 **Moment 2**
 
