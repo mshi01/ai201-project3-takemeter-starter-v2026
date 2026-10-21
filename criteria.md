@@ -102,14 +102,13 @@ The training data is balanced at 67 `analysis`, 67 `reaction`, and 66 `hot_take`
 ## 4.
 
 <!-- Your criterion. -->
-
-On a second blind labeling of 30 randomly selected posts, the model must agree with my final labels on at least 21 posts, or 70% agreement.
+At least 75% of disagreements between the model and human labels must involve the known difficult boundary of reaction versus hot_take, rather than random errors across all labels.
 
 
 
 **Why this target:**
 
-The hardest boundary in this taxonomy is `reaction` versus `hot_take`, because both can use strong emotional language. Reaching 70% agreement on a fresh sample would show that the decision rules are specific enough to apply consistently rather than only fitting the original examples.
+The hardest boundary in this taxonomy is `reaction` versus `hot_take`, because both can use strong emotional language. If at least 75% of disagreements between the model and human labels involve the known difficult boundary of reaction vs hot_take, it shows that the discrepency does not come from random errors across all labels.
 
 
 

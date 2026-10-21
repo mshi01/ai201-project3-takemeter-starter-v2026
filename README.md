@@ -215,6 +215,7 @@ I think distinguishing analysis from hot_take is relatively easy because analysi
 **Moment 2**
 
 - *What I asked for:*
+
 I asked it to suggest another criterion to use to gauge the model performance and accuracy.
 
 - *What came back:*
