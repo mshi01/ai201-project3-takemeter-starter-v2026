@@ -1,0 +1,184 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 30,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 30,
+    "accuracy": 0.3333333333333333,
+    "f1_macro": 0.16666666666666666,
+    "per_label": {
+      "analysis": {
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1": 0.5,
+        "support": 10
+      },
+      "hot_take": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 10
+      },
+      "reaction": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 10
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "He took the ball earlier on the backhand side and moved his opponent backward. That tactical change explains the shorter rallies in the last two sets.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "The besties be falling like dominoes in China. First Alex and now Zeynep.",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "He double-faulted on match point and just stood there. That was painful to watch.",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "His ranking rose from 84 to 51 after three tournaments, but the jump came mostly from one semifinal because his older points expired this week.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "His tournament ended with a loss, but he won 68% of return points against the second serve. The service performance was not the reason he lost.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "A loud crowd makes matches worse because it rewards drama instead of quality.",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "What a bizarre finish. The crowd went from silent to completely out of control in about thirty seconds.",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "No player needs a coach once they reach the top 20; coaches just get credit for work the players do themselves.",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "She has reached four quarterfinals, but has not yet beaten a top-10 player. Her consistency is real, though the next step is quality of wins.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "A tournament draw is more important than form, and fans pretend otherwise.",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "I cannot believe she is playing again tomorrow after that marathon today.",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "He faced 14 break points and saved 12 of them, while his opponent converted only 2 of 11. The scoreboard was close, but the pressure points were not evenly shared.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Considering he went 5/5 this is crazy.",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "There was a very long stretch in the first set where Bencic was barely winning points, which was wild to see.",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Francisco Cabral and JJ Tracy have advanced to the men's doubles final at the Rolex Shanghai Masters. Cabral first one!",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Players with one-handed backhands are choosing style over results.",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "A serve over 130 miles per hour is basically unreturnable.",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Tennis commentary would improve immediately if analysts stopped talking about momentum.",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Anyone who plays a long match and complains about fatigue has misunderstood professional sport.",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "The player with fewer winners won because she kept the ball deep and forced 31 errors. The match rewarded pressure without excessive risk.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "The score was 6-3, 6-2, yet the winner saved seven break points. Her opponent had openings but could not finish the games.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Tennis needs fewer tournaments and far fewer interviews.",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "That was heartbreaking. He was one point away and then everything disappeared.",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "He has beaten three top-20 players this month, but all three matches went three sets and lasted more than two and a half hours. The results are strong, though the workload is significant.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "The straight-set score hides how close the match was: both sets reached 5-5, and the winner took only three more points overall.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Tiebreaks are just a lazy way to avoid letting tennis matches finish properly.",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "The wind is moving everything around and both players look completely fed up.",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "He just saved match point with a drop shot. I actually stood up from my chair for that one.",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "The men's game has become nothing but serving and waiting for a tiebreak.",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "She returned serve much better from the ad court, winning 63% of those points compared with 41% from the deuce court.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    }
+  ]
+}

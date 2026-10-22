@@ -5,6 +5,6 @@
 #
 # Delete the examples below and put yours in.
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+analysis: A post which makes an argument or explanation using specific, checkable evidence such as statistics, comparisons, or examples. An opinion supported by evidence.
+hot_take: A post is a hot_take when it makes a confident, broad, or provocative opinion without providing meaningful supporting evidence.
+reaction: A post is a reaction when it expresses an immediate response to something that just happened. It usually communicates an emotion, personal experience, or quick impression rather than developing an argument.
