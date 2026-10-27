@@ -242,19 +242,21 @@ I replaced this criterion because it required a second blind labeling of randoml
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.333 | 0.933 | +0.600 |
+| Macro F1 | 0.167 | 0.933 | +0.766 |
+| F1 — `analysis` | 0.500 | 0.909 | +0.409 |
+| F1 — `hot_take` | 0.000 | 1.000 | +1.000 |
+| F1 — `reaction` | 0.000 | 0.889 | +0.889 |
 
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
+I predit the overall accuracy and F1 for each labels will be higher in trained vs baseline samples. 
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
-
+The trained model increased the overall accuracy and F1s for each label, which means the model has learned from training and thus the accuracies increases. 
 
 
 ---
@@ -277,18 +279,22 @@ I replaced this criterion because it required a second blind labeling of randoml
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
+| true \ predicted | analysis | hot_take | reaction |
 |---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| **analysis** | 10 | 0 | 0 |
+| **hot_take** | 0 | 10 | 0 |
+| **reaction** | 2 | 0 | 8 |
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
 
+Biggest confusion: 2 real `reaction` posts called `analysis`.
+The other direction: 0 real `analysis` posts called `reaction`.
 
+Roughly symmetric — the model finds this pair hard in both directions,
+which more often means the boundary itself is genuinely hard.
 
 ---
 
