@@ -268,11 +268,11 @@ The trained model increased the overall accuracy and F1s for each label, which m
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | >= 0.65 | 0.93 | 0.9 | 0.9 | MET |
+| 2. Every label F1 | >= 0.60 | 0.93 | 0.9 | 0.9 | MET |
+| 3. Test-set label distribution | 20% - 46% | 33% | 33% | 33% | MET |
+| 4. Disagreements involve reaction versus hot_take | >= 75% | 0% | 66% | 33% | MISSED |
+| 5. Among predictions with confidence of at least 0.80, must be correct on the held-out test set. | >= 75% | 100% | 90% | 100% | MET |
 
 ### Confusion matrix
 
@@ -305,11 +305,11 @@ which more often means the boundary itself is genuinely hard.
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | >= 0.65 | MET | For all 3 seeds, the overall accuracy was >= 0.65 |
+| 2 | Every label F1 | >= 0.60 | MET | For all 3 seeds, every label F1 was >= 0.60 and F1 macro for each seed was >= 0.60 |
+| 3 | Test-set label distribution | 20% - 46% | 33% | MET | For the 200 training samples, each label constitutes ~33%. During splitting, samples were stratified to have 1/3 of each label. Thus each label was ~33% in the test sets.
+| 4 | Disagreements involve reaction versus hot_take | >= 75% | MISSED | For Seed=42, there are 2 reaction posts predicted as analysis; For Seed=7, there are 1 hot_take post predicted as reaction and 1 reaction post predicted as analysis and 1 reaction post predicted as hot_take; For Seed=2024, there are 1 analysis post predicted as hot_take, 1 hot_take post predicted as reaction, and 1 reaction post predicted as analysis. |
+| 5 | Among predictions with confidence of at least 0.80, must be correct on the held-out test set. | >= 75% | MET | accuracy_most_confident_third >= 90% for each seed runs |
 
 **Diagnoses**
 
@@ -334,7 +334,7 @@ which more often means the boundary itself is genuinely hard.
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** _30__ / 30 = _100__%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
