@@ -41,7 +41,8 @@
 
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
-r/tennis.
+Community: r/tennis.
+
 The classifier will sort the posts into 3 labels "reaction", "analysis" and "hot_take".
 
 
@@ -57,6 +58,7 @@ The classifier will sort the posts into 3 labels "reaction", "analysis" and "hot
 
 ### `label_one`
 analysis
+
 **Definition:**
 
 A post which makes an argument or explanation using specific, checkable evidence such as statistics, comparisons, or examples. An opinion supported by evidence.
@@ -308,10 +310,13 @@ which more often means the boundary itself is genuinely hard.
 | 1 | Overall accuracy | >= 0.65 | MET | For all 3 seeds, the overall accuracy was >= 0.65 |
 | 2 | Every label F1 | >= 0.60 | MET | For all 3 seeds, every label F1 was >= 0.60 and F1 macro for each seed was >= 0.60 |
 | 3 | Test-set label distribution | 20% - 46% | 33% | MET | For the 200 training samples, each label constitutes ~33%. During splitting, samples were stratified to have 1/3 of each label. Thus each label was ~33% in the test sets.
-| 4 | Disagreements involve reaction versus hot_take | >= 75% | MISSED | For Seed=42, there are 2 reaction posts predicted as analysis; For Seed=7, there are 1 hot_take post predicted as reaction and 1 reaction post predicted as analysis and 1 reaction post predicted as hot_take; For Seed=2024, there are 1 analysis post predicted as hot_take, 1 hot_take post predicted as reaction, and 1 reaction post predicted as analysis. Each disagreements involve involve reaction vs hot_take did not occupy >= 75% |
+| 4 | Disagreements involve reaction versus hot_take | >= 75% | MISSED | Each disagreements involve involve reaction vs hot_take did not occupy >= 75% |
 | 5 | Among predictions with confidence of at least 0.80, must be correct on the held-out test set. | >= 75% | MET | accuracy_most_confident_third >= 90% for each seed runs |
 
 **Diagnoses**
+
+For Criteria 4, for Seed=42, there are 2 reaction posts predicted as analysis; for Seed=7, there are 1 hot_take post predicted as reaction and 1 reaction post predicted as analysis and 1 reaction post predicted as hot_take; for Seed=2024, there are 1 analysis post predicted as hot_take, 1 hot_take post predicted as reaction, and 1 reaction post predicted as analysis. Each disagreements involve involve reaction vs hot_take did not occupy >= 75%. There are disagreements between other labels, such as reaction vs analysis and hot_take vs analysis.
+
 
 <!-- For each miss: the cause, and how you know. The four common causes are:
      too few examples for a label, a boundary you applied inconsistently, a
