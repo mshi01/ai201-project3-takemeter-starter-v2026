@@ -308,7 +308,7 @@ which more often means the boundary itself is genuinely hard.
 | 1 | Overall accuracy | >= 0.65 | MET | For all 3 seeds, the overall accuracy was >= 0.65 |
 | 2 | Every label F1 | >= 0.60 | MET | For all 3 seeds, every label F1 was >= 0.60 and F1 macro for each seed was >= 0.60 |
 | 3 | Test-set label distribution | 20% - 46% | 33% | MET | For the 200 training samples, each label constitutes ~33%. During splitting, samples were stratified to have 1/3 of each label. Thus each label was ~33% in the test sets.
-| 4 | Disagreements involve reaction versus hot_take | >= 75% | MISSED | For Seed=42, there are 2 reaction posts predicted as analysis; For Seed=7, there are 1 hot_take post predicted as reaction and 1 reaction post predicted as analysis and 1 reaction post predicted as hot_take; For Seed=2024, there are 1 analysis post predicted as hot_take, 1 hot_take post predicted as reaction, and 1 reaction post predicted as analysis. |
+| 4 | Disagreements involve reaction versus hot_take | >= 75% | MISSED | For Seed=42, there are 2 reaction posts predicted as analysis; For Seed=7, there are 1 hot_take post predicted as reaction and 1 reaction post predicted as analysis and 1 reaction post predicted as hot_take; For Seed=2024, there are 1 analysis post predicted as hot_take, 1 hot_take post predicted as reaction, and 1 reaction post predicted as analysis. Each disagreements involve involve reaction vs hot_take did not occupy >= 75% |
 | 5 | Among predictions with confidence of at least 0.80, must be correct on the held-out test set. | >= 75% | MET | accuracy_most_confident_third >= 90% for each seed runs |
 
 **Diagnoses**
@@ -343,6 +343,7 @@ which more often means the boundary itself is genuinely hard.
 
 **Disagreements**
 
+As 30 out of 30 were agreed, this part was not provide.
 <!-- Three lines each: the post, both labels, and who you think is right and
      why — grounded in the staff definitions you were both applying.
 
@@ -356,7 +357,7 @@ which more often means the boundary itself is genuinely hard.
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
 
-**1.**
+<!-- **1.**
 > *The post:*
 >
 > *Staff said / I said:*
@@ -374,7 +375,7 @@ which more often means the boundary itself is genuinely hard.
 >
 > *Which pile:*
 
-**What the pattern in my disagreements tells me:**
+**What the pattern in my disagreements tells me:** -->
 
 
 
@@ -384,23 +385,29 @@ which more often means the boundary itself is genuinely hard.
 
 **What I changed:**
 
+Add more example posts to the "reaction" label in labels.csv. 
+
 **Which diagnosis pointed at it:**
+
+Since the biggest confusion from real "reaction" post predicted as "analysis". "reaction" is the thinnest label. I would like to add 30 more reaction posts for training set. 
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | >= 0.65 | 0.91 | 0.86 | 0.89 | MET |
+| 2. Every label F1 | >= 0.60 | 0.92 | 0.86 | 0.89 | MET |
+| 3. Test-set label distribution | 20% - 46% | 29% | 29% | 42% | MET |
+| 4. Disagreements involve reaction versus hot_take | >= 75% | 66% | 50% | 25% | MISSED |
+| 5. Among predictions with confidence of at least 0.80, must be correct on the held-out test set. | >= 75% | 100% | 91% | 100% | MET |
 
 **Did it help, and how do I know:**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
+The added reaction examples may have helped reaction recall slightly, but they did not improve overall test performance in this run.
 
+For the missed criteria, criteria 4, it only slightly increased the number of disagreement post which involve reaction vs hot_take. 
 
 
 ---
@@ -409,12 +416,12 @@ which more often means the boundary itself is genuinely hard.
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
-
+To measure the effect more rigorously, we can keep the original test set fixed and add the 30 posts only to the training portion.
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
-
+I intended reaction to capture immediate emotional responses, while analysis should require a supported explanation or argument. The model still sometimes treats reactions that mention specific match details as analysis, suggesting it learned to rely on concrete tennis vocabulary more than on the difference between describing an event and explaining its significance.
 
 
 <!-- ═════════════════════════════════════════════════════════════════════
